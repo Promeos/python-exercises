@@ -352,6 +352,7 @@ print(twelveto24('1:00pm'))
 
 # When I sat with the problem, it reminded me of combinations in probability. 
 # Going through the Khan Academy prework for Codeup paid off. Thanks Khan Academy.
+# UPDATE: MY FORMULA BREAKS AFTER 2 COLUMN NAMES!!!!
 def col_index(column_name):
     # I initialize 3 variables
     # The first is to calculate the 'grouping' value of all columms excluding the last column
@@ -362,7 +363,7 @@ def col_index(column_name):
     total_column_value = 0
 
 
-    # OMG. I making a cipher. lol.
+    # 
     # Each letter in a column_name has value. Each letter from A-Z has values 1-26.
     # I use a dictionary to bind the letter and number together.
     letter_values = {'A':1,'B':2,'C':3,'D':4,'E':5,'F':6,'G':7,'H':8,
@@ -382,7 +383,7 @@ def col_index(column_name):
         if letter == column_name[-1]:
             last_column_value += letter_values[letter]
     
-    # Return the fruits of my intellectual labor.
+    # Return the fruits of my intellectual labor. -- still needs to grow
     total_column_value = column_group_value + last_column_value
     return total_column_value    
 
