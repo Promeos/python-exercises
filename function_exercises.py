@@ -290,43 +290,26 @@ print(twelveto24('3:00pm'))
 # In[19]:
 
 
-def col_index(column_name):
-    column_group_value = 0
-    last_column_value = 0
-    total_column_value = 0
+# def col_index(column_name):
+#     column_group_value = 0
+#     last_column_value = 0
+#     total_column_value = 0
     
-    letter_values = {'A':1,'B':2,'C':3,'D':4,'E':5,'F':6,'G':7,'H':8,
-                     'I':9,'J':10,'K':11,'L':12,'M':13,'N':14,'O':15,
-                     'P':16,'Q':17,'R':18,'S':19,'T':20,'U':21,'V':22,
-                     'W':23,'X':24,'Y':25,'Z':26}
+#     letter_values = {'A':1,'B':2,'C':3,'D':4,'E':5,'F':6,'G':7,'H':8,
+#                      'I':9,'J':10,'K':11,'L':12,'M':13,'N':14,'O':15,
+#                      'P':16,'Q':17,'R':18,'S':19,'T':20,'U':21,'V':22,
+#                      'W':23,'X':24,'Y':25,'Z':26}
     
-    if len(column_name) >= 2:
-        for i in range(1, len(col_index)):
-            for letter in column_name[:len(column_name)-1]: 
-                column_group_value += (26**(len(column_name-i)) * letter_values[letter]
+#     if len(column_name) >= 2:
+#         for i in range(1, len(col_index)):
+#             for letter in column_name[:len(column_name)-1]: 
+#                 column_group_value += (26**(len(column_name-i)) * letter_values[letter]
   
-    for letter in letter_values:
-        if letter == column_name[-1]:
-            last_column_value += letter_values[letter]
+#     for letter in letter_values:
+#         if letter == column_name[-1]:
+#             last_column_value += letter_values[letter]
     
-    total_column_value = column_group_value + last_column_value
-    return total_column_value    
-
-
-# In[49]:
-
-
-col_index('ZZA')
-
-
-# In[ ]:
-
-
-a = list(zip(itertools.count(1), ))
-
-
-# In[ ]:
-
-
+#     total_column_value = column_group_value + last_column_value
+#     return total_column_value    
 
 
