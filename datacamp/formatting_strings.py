@@ -63,7 +63,7 @@ print(f"About {fact2:e} of {field2} in the world")
 print(f"{field3} create around {round(fact3, 2)}% of the data but only {fact4:.1f}% is analyzed")
 
 
-### 5.
+### 5. Using functions inside of f-strings
 
 # Divide the length of list by 120 rounded to two decimals
 print(f"Only {len(list_links)*100/120:.2f}% of the posts contain links")
@@ -73,3 +73,51 @@ print(f"{string1.replace('https', '')}")
 
 # Include both variables and the result of dividing them 
 print(f"{number1} tweets were downloaded in {number2} minutes indicating a speed of {number1/number2:.1f} tweets per min")
+
+# Access values of date and price in east dictionary
+print(f"The price for a house in the east neighborhood was ${east['price']} in {east['date']:%m-%d-%Y}")
+
+# Access values of date and price in west dictionary
+print(f"The price for a house in the west neighborhood was ${west['price']} in {west['date']:%m-%d-%Y}.")
+
+
+### 6. Creating a Template String to Display Messages
+
+# Import template
+from string import Template
+
+# Select variables
+our_tool = tools[0]
+our_fee = tools[1]
+our_pay = tools[2]
+
+# Create template
+course = Template("We are offering a 3-month beginner course on $tool just for $$$fee ${pay}ly")
+
+# Substitute identifiers with three variables
+print(course.substitute(tool=our_tool, fee=our_fee, pay=our_pay))
+
+
+### 7. Using String Templates with `.substitute()` inside of try except blocks
+
+# Import template
+from string import Template
+
+# Complete template string using identifiers
+the_answers = Template("Check your answer 1: $answer1, and your answer 2: $answer2")
+
+# Use substitute to replace identifiers
+try:
+    print(the_answers.substitute(answers))
+except KeyError:
+    print("Missing information")
+
+## Safe Substitute
+# Complete template string using identifiers
+the_answers = Template("Check your answer 1: $answer1, and your answer 2: $answer2")
+
+# Use safe_substitute to replace identifiers
+try:
+    print(the_answers.safe_substitute(answers))
+except KeyError:
+    print("Missing information")
